@@ -11,7 +11,7 @@ class Index {
         if ($requestBody) {
             $pushData        = json_decode($requestBody, true);
         }
-        return $pushData;
+        return is_array($pushData);
         $LogModel = new Log();
         if (empty($pushData)) {
             return $LogModel->select();
