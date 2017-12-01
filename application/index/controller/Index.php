@@ -20,6 +20,8 @@ class Index {
             'content'=>$requestBody
         ];
         $LogModel->data($data)->save();
+        //        http://sailengsi:f1ca0de95f2c8b4c0e661cc55f14448b@119.28.176.58:8080/generic-webhook-trigger/invoke
+        http('http://sailengsi:f1ca0de95f2c8b4c0e661cc55f14448b@119.28.176.58:8080/generic-webhook-trigger/invoke', $pushData, 'POST');
         return [
             'id'=>$LogModel->id
         ];
