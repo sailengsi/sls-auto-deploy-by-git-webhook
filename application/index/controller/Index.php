@@ -14,7 +14,7 @@ class Index {
         $LogModel = new Log();
         if (empty($pushData)) {
             $data = $LogModel->order('id desc')->find();
-            return $data['content'];
+            return json_decode($data['content'], true);
         }
         $data=[
             'content'=>$requestBody
