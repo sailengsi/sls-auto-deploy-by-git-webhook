@@ -7,7 +7,10 @@ use app\index\model\Log;
 class Index {
     public function index() {
         $requestBody = file_get_contents("php://input");
-        $pushData        = json_decode($requestBody, true);
+        $pushData = null;
+        if ($requestBody) {
+            $pushData        = json_decode($requestBody, true);
+        }
         $LogModel = new Log();
         if (empty($pushData)) {
             return $LogModel->select();
