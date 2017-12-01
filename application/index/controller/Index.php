@@ -13,8 +13,8 @@ class Index {
         }
         $LogModel = new Log();
         if (empty($pushData)) {
-            $list = $LogModel->order('id desc')->find();
-            return $list;
+            $data = $LogModel->order('id desc')->find();
+            return $data['content'];
         }
         $data=[
             'content'=>$requestBody
