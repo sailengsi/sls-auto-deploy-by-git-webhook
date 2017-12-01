@@ -9,9 +9,8 @@ class Index {
         $requestBody = file_get_contents("php://input");
         $pushData = null;
         if ($requestBody) {
-            $pushData        = json_decode($requestBody, true);
+            $pushData = json_decode($requestBody, true);
         }
-        return is_array($pushData);
         $LogModel = new Log();
         if (empty($pushData)) {
             return $LogModel->select();
@@ -19,7 +18,7 @@ class Index {
         $data=[
             'content'=>$requestBody
         ];
-        $LogModel->save($data);
+        $LogModel->data($data)->save();
         return [
             'id'=>$LogModel->id
         ];
