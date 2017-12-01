@@ -13,15 +13,15 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => $_ENV ? $_ENV['MYSQL_HOST'] : '127.0.0.1',
     // 数据库名
-    'database'        => '',
+    'database'        => $_ENV ? $_ENV['MYSQL_DBNAME'] : '',
     // 用户名
-    'username'        => 'root',
+    'username'        => $_ENV ? $_ENV['MYSQL_USERNAME'] : 'root',
     // 密码
-    'password'        => '',
+    'password'        => $_ENV ? $_ENV['MYSQL_PASSWORD'] : '',
     // 端口
-    'hostport'        => '',
+    'hostport'        => $_ENV ? $_ENV['MYSQL_PORT'] : '3306',
     // 连接dsn
     'dsn'             => '',
     // 数据库连接参数
