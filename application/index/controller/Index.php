@@ -16,6 +16,8 @@ class Index {
             'content'=>$requestBody
         ];
         $LogModel->save($data);
-        return $LogModel->id;
+        return [
+            'id'=>$LogModel->id
+        ];
     }
 }
